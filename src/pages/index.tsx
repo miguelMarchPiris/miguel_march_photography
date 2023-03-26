@@ -10,6 +10,7 @@ import Portfolio from '../components/Sections/Portfolio';
 import Resume from '../components/Sections/Resume';
 import Testimonials from '../components/Sections/Testimonials';
 import {homePageMeta} from '../data/data';
+import ImageSlider from "../components/Sections/ImageSlider";
 
 // eslint-disable-next-line react-memo/require-memo
 const Header = dynamic(() => import('../components/Sections/Header'), {ssr: false});
@@ -19,6 +20,7 @@ const Home: FC = memo(() => {
   return (
     <Page description={description} title={title}>
       <Header />
+      <ImageSlider />
       <Hero />
       <About />
       <Resume />

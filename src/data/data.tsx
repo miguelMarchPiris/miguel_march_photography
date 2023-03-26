@@ -11,9 +11,7 @@ import {
 import GithubIcon from '../components/Icon/GithubIcon';
 import InstagramIcon from '../components/Icon/InstagramIcon';
 import LinkedInIcon from '../components/Icon/LinkedInIcon';
-import StackOverflowIcon from '../components/Icon/StackOverflowIcon';
-import TwitterIcon from '../components/Icon/TwitterIcon';
-import heroImage from '../images/header-background.webp';
+import heroImage from '../images/panoramic_background.jpg';
 import porfolioImage1 from '../images/portfolio/portfolio-1.jpg';
 import porfolioImage2 from '../images/portfolio/portfolio-2.jpg';
 import porfolioImage3 from '../images/portfolio/portfolio-3.jpg';
@@ -27,6 +25,7 @@ import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
+import {age, githubName, githubUrl, instagramName, instagramUrl, locationBcn} from "./constants";
 import {
   About,
   ContactSection,
@@ -40,13 +39,16 @@ import {
   TimelineItem,
 } from './dataDef';
 
+export const baseUrl = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? 'http://localhost:3000/' : 'https://rbrasco.github.io/personal-webpage-template';
+
 /**
  * Page meta data
  */
 export const homePageMeta: HomepageMeta = {
   title: 'React Resume Template',
   description: "Example site built with Tim Baker's react resume template",
-  uri: 'https://rbrasco.github.io/personal-webpage-template',
+  uri: baseUrl,
+  //todo:  No se que hace lo de arriba
   path: 'personal-webpage-template',
 };
 
@@ -71,7 +73,7 @@ export type SectionId = typeof SectionId[keyof typeof SectionId];
  */
 export const heroData: Hero = {
   imageSrc: heroImage,
-  name: 'Person Name',
+  name: 'Miguel March Piris',
   title: (str: string) => `I'm ${str}`,
   description: (
     <>
@@ -111,12 +113,12 @@ export const aboutData: About = {
   to use or feel most comfortable with, describing your personality, or whatever else you feel like throwing
   in.`,
   aboutItems: [
-    {label: 'Location', text: 'Victoria, BC', Icon: MapIcon},
-    {label: 'Age', text: '29', Icon: CalendarIcon},
-    {label: 'Nationality', text: 'Canadian / Irish', Icon: FlagIcon},
-    {label: 'Interests', text: 'Motorcycles, Muay Thai, Banjos', Icon: SparklesIcon},
-    {label: 'Study', text: 'University of Victoria', Icon: AcademicCapIcon},
-    {label: 'Employment', text: 'Instant Domains, inc.', Icon: OfficeBuildingIcon},
+    {label: 'Location', text: locationBcn, Icon: MapIcon},
+    {label: 'Age', text: age.toString(), Icon: CalendarIcon},
+    {label: 'Nationality', text: 'Spanish', Icon: FlagIcon},
+    {label: 'Interests', text: 'Wildlife, Diving, Adventure', Icon: SparklesIcon},
+    {label: 'Study', text: 'University of Barcelona', Icon: AcademicCapIcon},
+    {label: 'Employment', text: 'Mundimoto', Icon: OfficeBuildingIcon},
   ],
 };
 
@@ -348,18 +350,28 @@ export const contact: ContactSection = {
     },
     {
       type: ContactType.Location,
-      text: 'Victoria BC, Canada',
-      href: 'https://www.google.ca/maps/place/Victoria,+BC/@48.4262362,-123.376775,14z',
+      text: 'Barcelona, Spain',
+      href: 'https://goo.gl/maps/KSQz99BydXe2LUN97',
+    },
+    {
+      type: ContactType.Location,
+      text: 'Menorca, Spain',
+      href: 'https://goo.gl/maps/sRLjpVwAdYqEvXQY8',
+    },
+    {
+      type: ContactType.Location,
+      text: 'Mallorca, Spain',
+      href: 'https://goo.gl/maps/pn6MAsPetKmWdg2L7',
     },
     {
       type: ContactType.Instagram,
-      text: '@tbakerx',
-      href: 'https://www.instagram.com/tbakerx/',
+      text: instagramName,
+      href: instagramUrl,
     },
     {
       type: ContactType.Github,
-      text: 'tbakerx',
-      href: 'https://github.com/tbakerx',
+      text: githubName,
+      href: githubUrl,
     },
   ],
 };
@@ -368,9 +380,9 @@ export const contact: ContactSection = {
  * Social items
  */
 export const socialLinks: Social[] = [
-  {label: 'Github', Icon: GithubIcon, href: 'https://github.com/tbakerx'},
-  {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
-  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/timbakerx/'},
-  {label: 'Instagram', Icon: InstagramIcon, href: 'https://www.instagram.com/tbakerx/'},
-  {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
+  {label: 'LinkedIn', Icon: LinkedInIcon, href: 'https://www.linkedin.com/in/miguel-march-piris-b741a5186/'},
+  {label: 'Instagram', Icon: InstagramIcon, href: instagramUrl},
+  {label: 'Github', Icon: GithubIcon, href: githubUrl},
+  // {label: 'Stack Overflow', Icon: StackOverflowIcon, href: 'https://stackoverflow.com/users/8553186/tim-baker'},
+  // {label: 'Twitter', Icon: TwitterIcon, href: 'https://twitter.com/TimBakerx'},
 ];
