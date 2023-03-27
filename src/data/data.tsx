@@ -39,7 +39,7 @@ import {
   TimelineItem,
 } from './dataDef';
 
-export const baseUrl = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? 'http://localhost:3000/' : 'https://rbrasco.github.io/personal-webpage-template';
+export const baseUrl = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? 'http://localhost:3000/' : 'https://miguelmarchpiris.github.io/miguel_march_photography/' ;
 
 /**
  * Page meta data
