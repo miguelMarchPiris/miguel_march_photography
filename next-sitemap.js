@@ -1,6 +1,6 @@
 /* eslint-env node */
 module.exports = {
-  siteUrl: 'rbrasco.github.io/personal-webpage-template',
+  siteUrl: 'miguelmarchpiris.github.io/miguel_march_photography/',
   exclude: ['/404*', '/500*'],
   transform: async (config, path) => {
     return {
