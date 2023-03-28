@@ -39,17 +39,19 @@ import {
   TimelineItem,
 } from './dataDef';
 
-export const baseUrl = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? 'http://localhost:3000/' : 'https://miguelmarchpiris.github.io/miguel_march_photography/' ;
+export const miguelMarchPhotography = 'miguel_march_photography';
+export const baseUrl = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://miguelmarchpiris.github.io/'+miguelMarchPhotography ;
 
 /**
  * Page meta data
  */
+
+// Informacion de metadatos de la página web
 export const homePageMeta: HomepageMeta = {
-  title: 'React Resume Template',
-  description: "Example site built with Tim Baker's react resume template",
+  title: 'Miguel March Photography',
+  description: "A personal portfolio to showcase my work as a photographer and filmmaker.",
   uri: baseUrl,
-  //todo:  No se que hace lo de arriba
-  path: 'personal-webpage-template',
+  path: miguelMarchPhotography,
 };
 
 /**
