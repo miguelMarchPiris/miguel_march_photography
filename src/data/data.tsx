@@ -25,7 +25,7 @@ import porfolioImage10 from '../images/portfolio/portfolio-10.jpg';
 import porfolioImage11 from '../images/portfolio/portfolio-11.jpg';
 import profilepic from '../images/profilepic.jpg';
 import testimonialImage from '../images/testimonial.webp';
-import {age, githubName, githubUrl, instagramName, instagramUrl, locationBcn} from "./constants";
+import {age, githubName, githubUrl, instagramName, instagramUrl, locationBcn} from './constants';
 import {
   About,
   ContactSection,
@@ -40,7 +40,10 @@ import {
 } from './dataDef';
 
 export const miguelMarchPhotography = 'miguel_march_photography';
-export const baseUrl = (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'https://miguelmarchpiris.github.io/'+miguelMarchPhotography ;
+export const baseUrl =
+  !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'https://miguelmarchpiris.github.io/' + miguelMarchPhotography;
 
 /**
  * Page meta data
@@ -49,7 +52,7 @@ export const baseUrl = (!process.env.NODE_ENV || process.env.NODE_ENV === 'devel
 // Informacion de metadatos de la página web
 export const homePageMeta: HomepageMeta = {
   title: 'Miguel March Photography',
-  description: "A personal portfolio to showcase my work as a photographer and filmmaker.",
+  description: 'A personal portfolio to showcase my work as a photographer and filmmaker.',
   uri: baseUrl,
   path: miguelMarchPhotography,
 };
